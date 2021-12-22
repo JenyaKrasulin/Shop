@@ -1,0 +1,46 @@
+{% extends "body.html" %}
+{% load static %}
+{% block all %}
+
+    {#----Блок 1------------------------------------------------------------------------#}
+    <div class="block1">
+        {#----Контейнер блока 1------------------------------------------------------------------------#}
+        <div class="block1__container _container">
+
+            {#----Тело блока 1------------------------------------------------------------------------#}
+            <div class="block1__body">
+
+                {#----Текст------------------------------------------------------------------------#}
+                <div class="block1__text">
+                    <h1 class="bl1-text__h">Контакты</h1>
+
+                    {#---Список контактов------------------------------------------------------------------------#}
+                    <ul class="bl1-text__list">
+                        <li class="bl1-text__item">
+                            Email: <a href="" class="bl1-text__a">Почта</a>
+                        </li>
+                        <li class="bl1-text__item">
+                            Телефон: +380661549132
+                        </li>
+                        <li class="bl1-text__item">
+                            Telegram: <a href="" class="bl1-text__a">Телеграм</a>
+                        </li>
+                        <li class="bl1-text__item">
+                            Instagram: <a href="" class="bl1-text__a">Инстаграм</a>
+                        </li>
+                        <li class="bl1-text__item">
+                            Facebook: <a href="" class="bl1-text__a">Фейсбук</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                {#----Картинка------------------------------------------------------------------------#}
+                <img src="{% static "img/Group 13 (1).svg" %}" alt="" class="block1__image">
+
+            </div>
+        </div>
+    </div>
+
+{% endblock all %}
+

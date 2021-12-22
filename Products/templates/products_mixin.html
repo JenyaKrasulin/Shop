@@ -1,0 +1,115 @@
+{% extends "body.html" %}
+
+{% block all %}
+
+    {#----Блок1 (категории)------------------------------------------------------------------------#}
+    <div class="block1">
+
+        {#----Контейнер блока1------------------------------------------------------------------------#}
+        <div class="block1__container _container">
+
+            {#----Тело блока 1------------------------------------------------------------------------#}
+            <div class="block1__body">
+
+                {#----Список категорий------------------------------------------------------------------------#}
+                <ul class="block1__list">
+                    {% for tag in tags %}
+                        {% if tag.title == producttag.title %}
+                            <li class="block1__item" style="border-bottom: 1px solid black;">
+                                <a href="{{ tag.get_absolute_url }}" class="block1__link">{{ tag.title }}</a>
+                            </li>
+                        {% else %}
+                            <li class="block1__item">
+                                <a href="{{ tag.get_absolute_url }}" class="block1__link">{{ tag.title }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {#----Блок2 (фильтры)------------------------------------------------------------------------#}
+    <div class="block2">
+
+        {#----Контейнер блока2------------------------------------------------------------------------#}
+        <div class="block2__container _container">
+
+            {#----Тело блока2------------------------------------------------------------------------#}
+            <div class="block2__body">
+
+                {#----Форма отправка инфы фильтров блока2------------------------------------------------------------------------#}
+                <form action="{% url "show_filter" %}" method="get">
+
+                    {#----Фильтры блока2------------------------------------------------------------------------#}
+                    <div class="block2-filter ">
+
+                        {#----Выбор размера блока2------------------------------------------------------------------------#}
+                        <select name="size" class="bl2-filt__dropdown">
+                            <option selected="selected" value="Все">Размер</option>
+                            {% for spec in specs.size.all %}
+                                <option value="{{ spec.value }}">{{ spec.value }}</option>
+                            {% endfor %}
+                        </select>
+
+                        {#----Выбор сезона блока2------------------------------------------------------------------------#}
+                        <select name="season" class="bl2-filt__dropdown">
+                            <option selected="selected" value="Все">Сезон</option>
+                            {% for spec in specs.season.all %}
+                                <option value="{{ spec.value }}">{{ spec.value }}</option>
+                            {% endfor %}
+                        </select>
+
+                        {#----Выбор состава блока2------------------------------------------------------------------------#}
+                        <select name="composition" class="bl2-filt__dropdown">
+                            <option selected="selected" value="Все">Cостав</option>
+                            {% for spec in specs.composition.all %}
+                                <option value="{{ spec.value }}">{{ spec.value }}</option>
+                            {% endfor %}
+                        </select>
+
+                        {#----Выбор бренда блока2------------------------------------------------------------------------#}
+                        <select name="brand" class="bl2-filt__dropdown">
+                            <option selected="selected" value="Все">Бренд</option>
+                            {% for spec in specs.brand.all %}
+                                <option value="{{ spec.value }}">{{ spec.value }}</option>
+                            {% endfor %}
+                        </select>
+
+                    </div>
+
+                    {% block button %}
+
+                    {% endblock button %}
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {#----Блок3------------------------------------------------------------------------#}
+    <div class="block3">
+
+        {#----Контейнер блока3------------------------------------------------------------------------#}
+        <div class="block3__container _container">
+
+            {#----Тело блока3------------------------------------------------------------------------#}
+            <div class="block3__body">
+
+                {#----Товары блока 3------------------------------------------------------------------------#}
+                {% block content %}
+                {% endblock content %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock all %}

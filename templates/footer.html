@@ -1,0 +1,54 @@
+{% load static %}
+
+{# ----Футер------------------------------------------------------------------------ #}
+<footer>
+
+    {# ----Контейнер футера------------------------------------------------------------------------ #}
+    <div class="footer__container _container">
+
+        {# ----Лого футера------------------------------------------------------------------------ #}
+        <a href="{% url "show_home" %}">
+            <img src="{% static "img/Logo.png" %}" alt="" class="header__logo">
+        </a>
+
+        {# ----Меню футера с текстом------------------------------------------------------------------------ #}
+        <nav class="footer-menu">
+            <ul class="f-menu__list">
+                <li class="f-menu__item"><a href="{% url "show_contacts" %}" class="f-menu__link">Контакты</a></li>
+                <li class="f-menu__item"><a href="{% url "show_about" %}" class="f-menu__link">О нас</a></li>
+                <li class="f-menu__item"><a href="" class="f-menu__link">Поддержка</a></li>
+            </ul>
+        </nav>
+
+        {# ----Меню футера с иконками ------------------------------------------------------------------------ #}
+        <div class="footer-menu-links">
+            <ul class="f-m-links__list">
+
+                {# ----Инста------------------------------------------------------------------------ #}
+                <li class="f-m-links__item">
+                    <a href="" class="f-m-links__link">
+                        <img src="{% static "img/Instagram.svg" %}" alt=""
+                             class="f-m-links__img">
+                    </a>
+                </li>
+
+                {# ----Телега------------------------------------------------------------------------ #}
+                <li class="f-m-links__item">
+                    <a href="" class="f-m-links__link">
+                        <img src="{% static "img/Telegram.svg" %}" alt="" class="f-m-links__img">
+                    </a>
+                </li>
+
+                {# ----Фейсбук------------------------------------------------------------------------ #}
+                <li class="f-m-links__item">
+                    <a href="" class="f-m-links__link">
+                        <img src="{% static "img/Facebook.svg" %}" alt="" class="f-m-links__img">
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+</footer>

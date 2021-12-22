@@ -1,0 +1,264 @@
+
+header {
+    background: linear-gradient(#000000, #ffffff);
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+/* ----Block1------------------------------------------------------------------------ */
+.block1 {
+
+}
+
+/* ----Контейнер блока1------------------------------------------------------------------------ */
+.block1__container {
+    padding-top: 2%;
+
+}
+
+/* ----Тело блока1------------------------------------------------------------------------ */
+.block1__body {
+
+}
+
+/* ----Категории------------------------------------------------------------------------ */
+.block1__list {
+    display: flex;
+    justify-content: center;
+
+}
+
+.block1__item {
+
+
+}
+
+.block1__item:not(:last-child) {
+    margin-right: 8%;
+}
+
+.block1__link {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 123%;
+    color: #000000;
+}
+
+/* ----Блок 2------------------------------------------------------------------------ */
+.block2 {
+}
+
+/* ----Контейнер блока1------------------------------------------------------------------------ */
+.block2__container {
+    padding-top: 2%;
+}
+
+/* ----Тело блока2------------------------------------------------------------------------ */
+.block2__body {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* ----Форма отправки данных фильтров------------------------------------------------------------------------ */
+form {
+    max-width: 550px;
+    width: 200%;
+}
+
+/* ----Фильтры------------------------------------------------------------------------ */
+.block2-filter {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    margin-bottom: 5%;
+
+}
+
+/* ----Выпадающий список------------------------------------------------------------------------ */
+.bl2-filt__dropdown {
+    font-size: 24px;
+    font-family: "Roboto";
+    outline: none;
+    border: 2px black solid;
+    padding: 3px;
+    max-width: 120px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.bl2-filt__dropdown:hover {
+    color: purple;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ----Кнопка отправки формы------------------------------------------------------------------------ */
+.block2 button {
+    font-family: "Roboto";
+    background: #FFFFFF;
+    border-radius: 35px;
+    border: 2px solid black;
+    font-size: 24px;
+    line-height: 116%;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 60px;
+    cursor: pointer;
+}
+
+.block2__button {
+    display: inline-flex;
+}
+
+.block2 button:hover {
+    opacity: 0.7;
+}
+
+/* ----Блок3------------------------------------------------------------------------ */
+.block3 {
+
+}
+
+/* ----Контейнер блока3------------------------------------------------------------------------ */
+.block3__container {
+    padding-top: 2%;
+
+
+}
+
+/* ----Тело блока3------------------------------------------------------------------------ */
+.block3__body {
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* ----Товар блока3------------------------------------------------------------------------ */
+.block3__item:hover {
+    opacity: 0.5;
+}
+
+.block3__item {
+    border-radius: 25px;
+    margin-bottom: 5%;
+    background: #EFEFEF;
+    border: 1px solid #A8A8A8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ----Контент товара------------------------------------------------------------------------ */
+.bl3-itm__content {
+    box-sizing: content-box;
+    padding: 9px 14px 20px 14px;
+}
+
+/* ----Картинка товара------------------------------------------------------------------------ */
+.bl3-itm-cont__img {
+    width: 100%;
+    max-width: 270px;
+    height: auto;
+    max-height: 270px;
+}
+
+/* ----Текст товара------------------------------------------------------------------------ */
+.bl3-itm-cont__text {
+    height: 70px;
+    max-height: 90px;
+    max-width: 270px;
+    width: 100%;
+    box-sizing: content-box;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bl3-itm-cont-txt__p {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 26px;
+    line-height: 123%;
+    color: #000000
+}
+
+
+@media (max-width: 693px) {
+    .block1__link {
+        font-size: 21px;
+    }
+
+    .block2__body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bl2-filt__dropdown {
+        font-size: 18px;
+        padding: 2px;
+        border: 1px solid black;
+    }
+
+    form {
+        max-width: 450px;
+    }
+
+    .block3__container {
+        text-align: center;
+    }
+
+    .block3__body {
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+
+}
+
+@media (max-width: 467px) {
+    .block1__link {
+        font-size: 16px;
+    }
+
+    .block2__container {
+        padding-top: 3%;
+    }
+
+    .bl2-filt__dropdown {
+        font-size: 12px;
+    }
+
+    .bl2-filt__dropdown:hover {
+        box-shadow: initial;
+    }
+
+    .block2 button {
+        font-size: 16px;
+        padding: 0px 120px;
+
+    }
+
+    .block2-filter {
+        margin-bottom: 3%;
+    }
+
+    .block3__container {
+        padding-top: 3%;
+    }
+
+}
+
+@media (max-width: 367px) {
+    .bl2-filt__dropdown:not(:last-child) {
+        border-right: none;
+    }
+
+    .bl2-filt__dropdown {
+        font-size: 11px;
+    }
+
+}

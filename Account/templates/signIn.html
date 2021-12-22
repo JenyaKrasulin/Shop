@@ -1,0 +1,48 @@
+{% extends "sign.html" %}
+{% load static %}
+
+{% block content %}
+
+    <style>
+        .class1 {
+            border-bottom: 1px solid black;
+            color: black;
+        }
+    </style>
+
+    {#----Вход------------------------------------------------------------------------#}
+    <form method="post" action="{% url "show_sign_in" %}">
+        {% csrf_token %}
+
+        <ul class="block2__login" id="log">
+
+            {#----Ввод логина------------------------------------------------------------------------#}
+            <li class="bl2-login__input">
+                <p>Username:</p>
+                {{ sign_in.username }}
+            </li>
+
+            {#----Ввод пароля------------------------------------------------------------------------#}
+            <li class="bl2-login__input">
+                <p>Password:</p>
+                {{ sign_in.password }}
+            </li>
+
+            {#----Отправка формы------------------------------------------------------------------------#}
+            <li class="bl2-login__input">
+                <button class="bl2-login__button" name="log_form" onclick="this.disabled=true;this.form.submit();">
+                    Войти
+                </button>
+            </li>
+
+        </ul>
+
+    </form>
+
+{% endblock content %}
+
+
+
+
+
+

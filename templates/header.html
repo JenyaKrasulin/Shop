@@ -1,0 +1,58 @@
+{% load static %}
+<header>
+
+    {# ----Контейнер хедера------------------------------------------------------------------------ #}
+    <div class="_container header__container">
+
+        {# ----Лого------------------------------------------------------------------------ #}
+        <a href="{% url "show_home" %}">
+            <img src="{% static "img/Logo.png" %}" alt="" class="header__logo">
+        </a>
+
+        {# ----Меню------------------------------------------------------------------------ #}
+        <nav class="header-menu">
+            <ul class="h-menu__list">
+                <li class="h-menu__item" id="home">
+                    <a href="{% url "show_home" %}" class="h-menu__link">Главная</a>
+                </li>
+                <li class="h-menu__item hi " id="products">
+                    <a href="{% url 'show_products' %}" class="h-menu__link ">Одежда</a>
+                </li>
+                <li class="h-menu__item" id="about">
+                    <a href="{% url "show_about" %}" class="h-menu__link">О нас</a>
+                </li>
+                <li class="h-menu__item" id="contacts">
+                    <a href="{% url "show_contacts" %}" class="h-menu__link">Контакты</a>
+                </li>
+
+                {# ----Выход и корзина (если пользователь залогинился)------------------------------------------------------------------------ #}
+                {% if request.user.is_authenticated %}
+                    <li class="h-menu__item" id="logout">
+                        <a href="{% url "show_sign_out" %}" class="h-menu__link">
+                            Выход
+                        </a>
+                    </li>
+                    <li class="h-menu__item" id="bucket">
+                        <a href="{% url "show_cart" %}" class="h-menu__link">
+                            Корзина
+                            <img src="{% static "img/Shopping-cart.png" %}" alt="" class="cart__img">
+                        </a>
+                    </li>
+
+                    {# ----Вход (если пользователь не залогинился)------------------------------------------------------------------------ #}
+                {% else %}
+                    <li class="h-menu__item" id="login">
+                        <a href="{% url "show_sign_in" %}" class="h-menu__link">
+                            Вход
+                        </a>
+                    </li>
+                {% endif %}
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+

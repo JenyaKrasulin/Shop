@@ -1,0 +1,54 @@
+{% extends "sign.html" %}
+{% load static %}
+
+{% block content %}
+
+    <style>
+        .class2 {
+            border-bottom: 1px solid black;
+            color: black;
+        }
+    </style>
+
+    {#----Регистрация------------------------------------------------------------------------#}
+    <form method="post" action="{% url "show_sign_up" %}">
+        {% csrf_token %}
+        <ul class="block2__registration" id="reg">
+
+            {#---Логин------------------------------------------------------------------------#}
+            <li class="bl2-registration__input">
+                <p>Username:</p>
+                {{ sign_up.username }}
+            </li>
+
+            {#----Пароль1------------------------------------------------------------------------#}
+            <li class="bl2-registration__input">
+                <p>Password1:</p>
+                {{ sign_up.password }}
+            </li>
+
+            {#----Пароль2------------------------------------------------------------------------#}
+            <li class="bl2-registration__input">
+                <p>Password2:</p>
+                {{ sign_up.password2 }}
+            </li>
+
+            {#----Почта------------------------------------------------------------------------#}
+            <li class="bl2-registration__input">
+                <p>Mail:</p>
+                {{ sign_up.email }}
+            </li>
+
+            {#----Отправка формі------------------------------------------------------------------------#}
+            <li class="bl2-registration__input">
+                <button id="two" class="bl2-registration__button" name="reg_form"
+                        onclick="this.disabled=true;this.form.submit();">Регистрация
+                </button>
+            </li>
+
+            {{ sign_up.errors }}
+        </ul>
+
+    </form>
+
+{% endblock content %}

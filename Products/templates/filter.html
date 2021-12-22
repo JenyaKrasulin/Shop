@@ -1,0 +1,15 @@
+{% extends "products_mixin.html" %}
+
+{#----Кнопка------------------------------------------------------------------------#}
+{% block button %}
+    <div class="block2__body">
+        <button name="tag__title" value="{{ tag__title }}">Поиск</button>
+    </div>
+{% endblock button %}
+
+{#----Цикл товар------------------------------------------------------------------------#}
+{% block content %}
+    {% for product in products.all %}
+        {% include "cycle.html" %}
+    {% endfor %}
+{% endblock content %}

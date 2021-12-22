@@ -1,0 +1,96 @@
+{% extends "body.html" %}
+{% load static %}
+{% block all %}
+    {#----Блок 1------------------------------------------------------------------------#}
+    <div class="block1">
+
+        {#----Контейнер------------------------------------------------------------------------#}
+        <div class="block1__container _container">
+
+            {#---Главная часть блока 1------------------------------------------------------------------------#}
+            <div class="block1__body">
+
+                {#----Текст в блоке 1 "Всего..."------------------------------------------------------------------------#}
+                <div class="block1__text">
+                    <p class="bl1-text__p">Всего:</p>
+                    <div id="full_price">
+                        <span class="bl1-text__span">{{ cart_products.get_full_price }} грн</span>
+                    </div>
+                </div>
+
+                {#----Кнопка оформить------------------------------------------------------------------------#}
+                <button class="block1__button">Оформить заказ</button>
+
+            </div>
+        </div>
+    </div>
+
+    {#----Блок 2------------------------------------------------------------------------#}
+    <div class="block2">
+
+        {#----Контейнер------------------------------------------------------------------------#}
+        <div class=" _container block2__container">
+
+            {#---Главная часть блока 1------------------------------------------------------------------------#}
+            <div class="block2__body">
+
+                {#---Шаблонизатор, который отображает товары с модели------------------------------------------------------------------------#}
+                {% for cart in cart_products.user.all %}
+                    {#---Тело товара------------------------------------------------------------------------#}
+                    <div class="block2__item">
+
+                        {#---Картинка товара------------------------------------------------------------------------#}
+                        <a href="{{ cart.products.get_absolute_url }}" class="bl2-item__a">
+                            <img src="{{ cart.products.image.url }}" alt="" class="bl2-item__img">
+                        </a>
+
+                        {#---Название товара------------------------------------------------------------------------#}
+                        <p class="bl2-item__p">{{ cart.products.title }}</p>
+
+                        {#---Количество и цена------------------------------------------------------------------------#}
+                        <div id="{{ cart.products.id }}" class="bl2-item__price__count">
+                            <p class="bl2-item__price">{{ cart.get_price }}</p>
+                            <p class="bl2-item__count">{{ cart.count }}</p>
+                        </div>
+
+                        {#---Иконки------------------------------------------------------------------------#}
+                        <div class="bl2-item__icons__all">
+
+                            {#---Добавление количества------------------------------------------------------------------------#}
+                            <button name="button" onclick='click_cart({{ cart.products.id }},"add_item/")'
+                                    class="bl2-item__icons">
+                                <img src="{% static "img/add_shopping_cart_black_36dp.svg" %}" alt="">
+                            </button>
+
+                            {#---Уменьшение количества------------------------------------------------------------------------#}
+                            <button name="button" onclick="click_cart({{ cart.products.id }},'remove_item/')"
+                                    class="bl2-item__icons">
+                                <img src="{% static "img/remove_circle_outline_black_36dp.svg" %}">
+                            </button>
+
+                            {#---Удаление товара с корзины------------------------------------------------------------------------#}
+                            <form method="get" action="{% url "remove_cart" %}">
+                                <input type="hidden" name="id" value="{{ cart.products.id }}">
+                                <button name="button" class="bl2-item__icons">
+                                    <img src="{% static "img/remove_shopping_cart_black_36dp.svg" %}">
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener("pageshow", function (event) {
+            var historyTraversal = event.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2);
+            if (historyTraversal) {
+                window.location.reload();
+            }
+        });
+    </script>
+{% endblock all %}
+
+

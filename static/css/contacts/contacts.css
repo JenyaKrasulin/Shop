@@ -1,0 +1,84 @@
+/* ----Contacts------------------------------------------------------------------------ */
+header {
+    background: linear-gradient(#000000, #ffffff);
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+/* ----Блок 1------------------------------------------------------------------------ */
+.block1 {
+}
+
+/* ----Контейнер блока 1------------------------------------------------------------------------ */
+.block1__container {
+    padding-top: 2.75%;
+    text-align: center;
+    padding-bottom: 6%;
+}
+
+/* ----Тело блока 1------------------------------------------------------------------------ */
+.block1__body {
+    text-align: left;
+    display: inline-flex;
+}
+
+/* ----Текст------------------------------------------------------------------------ */
+.block1__text {
+    width: auto;
+    height: auto;
+    margin-right: 20px;
+}
+
+.bl1-text__h {
+    margin-bottom: 11.53%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 55px;
+    line-height: 67px;
+    color: #000000;
+}
+
+.bl1-text__list {
+}
+
+.bl1-text__item {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 120%;
+    color: #000000;
+}
+
+.bl1-text__item:not(:last-child) {
+    margin-bottom: 14%;
+}
+
+.bl1-text__a {
+    color: black;
+}
+
+/* ----Картинка------------------------------------------------------------------------ */
+.block1__image {
+}
+
+/* ----Адаптив------------------------------------------------------------------------ */
+@media (max-width: 767px) {
+    .block1__container {
+        text-align: left;
+    }
+
+    .block1__image {
+        display: none;
+    }
+
+
+    .bl1-text__h {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 467px) {
+    .bl1-text__item {
+        font-size: 20px;
+    }
+}

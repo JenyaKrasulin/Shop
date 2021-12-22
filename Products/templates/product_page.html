@@ -1,0 +1,112 @@
+{% extends "body.html" %}
+{% load static %}
+{% block all %}
+
+    {# ----Блок 1------------------------------------------------------------------------ #}
+    <div class="block1">
+        {# ----Контейнер блока 1------------------------------------------------------------------------ #}
+        <div class="block1__container _container">
+
+            {# ----Тело блока 1------------------------------------------------------------------------ #}
+            <div class="block1__body">
+
+                {# ----Картинка блока 1------------------------------------------------------------------------ #}
+                <img src="{{ product.image.url }}" class="block1__image" alt="">
+
+                {# ----Секция текст и кнопок------------------------------------------------------------------------ #}
+                <div class="block1__text__buttons">
+
+                    {# ----Название товара------------------------------------------------------------------------ #}
+                    <p class="bl1-txt-buttons__p">{{ product.title }}</p>
+
+                    {# ----Инфо товара секции текста и кнопок------------------------------------------------------------------------ #}
+                    <div class="bl1-txt-buttons__info">
+
+                        <ul class="bl1-txt-buttons-info__list1 ">
+                            <li class="bl1-txt-buttons-info__item">
+                                <p>Бренд</p>
+                            </li>
+                            <li class="bl1-txt-buttons-info__item">
+                                <p>Размер</p>
+                            </li>
+                            <li class="bl1-txt-buttons-info__item">
+                                <p>Сезон</p>
+                            </li>
+                            <li class="bl1-txt-buttons-info__item">
+                                <p>Состав</p>
+                            </li>
+                        </ul>
+
+                        <ul class="bl1-txt-buttons-info__list2">
+                            <li class="bl1-txt-buttons-info__item">
+                                <p>{{ product.brand }}</p>
+                            </li>
+                            <li class="bl1-txt-buttons-info__item">
+                                <p>{{ product.size }}</p>
+                            </li>
+                            <li class="bl1-txt-buttons-info__item">
+                                <p>{{ product.season }}</p>
+                            </li>
+                            <li class="bl1-txt-buttons-info__item">
+                                <p>{{ product.composition }}</p>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    {# ----Кнопка добавить в корзину------------------------------------------------------------------------ #}
+                    <div class="bl1-txt-buttons__add-to-cart " id="add_to_cart">
+                        <p>{{ product.price }}₴</p>
+                        {% if user.is_authenticated %}
+                            <button class="" onclick=" add_to_cart( {{ product.id }},'add_to_cart/')">
+                                Добавить в корзину
+                            </button>
+                        {% else %}
+                            <a href="{% url "show_sign_in" %}">
+                                <button class="">
+                                    Добавить в корзину
+                                </button>
+                            </a>
+                        {% endif %}
+                    </div>
+
+                    {# ----Кнопка перейти в корзину------------------------------------------------------------------------ #}
+                    <div class="bl1-txt-buttons__go-to-cart ">
+                        <a href="{% url "show_cart" %}">
+                            <button class=" ">
+                                Перейти в корзину
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# ----Блока 2------------------------------------------------------------------------ #}
+    <div class="block2">
+
+        {# ----Контейнер блока 2------------------------------------------------------------------------ #}
+        <div class="block2__container _container">
+
+            {# ----Кнопка перейти в корзину------------------------------------------------------------------------ #}
+            <div class="block2__body">
+
+                {# ----Описание товара------------------------------------------------------------------------ #}
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias blanditiis consectetur
+                    cumque dignissimos eligendi esse iure magnam molestias non praesentium quae quas quibusdam rem
+                    repellendus reprehenderit, ullam ut voluptatibus.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+{% endblock all %}

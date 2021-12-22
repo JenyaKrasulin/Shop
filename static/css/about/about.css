@@ -1,0 +1,111 @@
+/* ----About------------------------------------------------------------------------ */
+
+header {
+    background: linear-gradient(#000000, #ffffff);
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+/* ----Блок 1------------------------------------------------------------------------ */
+.block1 {
+}
+
+/* ----Контейнер блока 1------------------------------------------------------------------------ */
+.block1__container {
+    padding-top: 2.08%;
+    padding-bottom: 5.45%;
+    text-align: center;
+}
+
+/* ----Тело блока 1------------------------------------------------------------------------ */
+.block1__body {
+    display: inline-block;
+    color: black;
+    max-width: 970px;
+    text-align: left;
+    font-family: Montserrat;
+
+}
+
+/* ----Параметры p и h1------------------------------------------------------------------------ */
+.block1__body p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 126%;
+}
+
+.block1__body h1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 122%;
+}
+
+/* ----О нас------------------------------------------------------------------------ */
+.block1__about {
+    margin-bottom: 4.56%;
+}
+
+.bl1-about__h {
+}
+
+.bl1-about__p {
+}
+
+/* ----Адресс------------------------------------------------------------------------ */
+.block1__address {
+    margin-bottom: 2.56%;
+}
+
+.bl1__address {
+}
+
+.bl1-address__p {
+}
+
+/* ----Карта------------------------------------------------------------------------ */
+.bl1__map {
+}
+
+.bl1-map__h {
+}
+
+#mapid {
+    width: 100%;
+    height: 374px;
+}
+
+/* ----Адаптив------------------------------------------------------------------------ */
+@media (max-width: 992px) {
+    .block1__body h1 {
+        font-size: 45px;
+    }
+
+    .block1__body p {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 662px) {
+    .block1__body h1 {
+        font-size: 40px;
+    }
+
+    .block1__body p {
+        font-size: 20px;
+    }
+
+
+}
+
+@media (max-width: 467px) {
+    .block1__body h1 {
+        font-size: 24px;
+    }
+
+    .block1__body p {
+        font-size: 16px;
+    }
+
+}

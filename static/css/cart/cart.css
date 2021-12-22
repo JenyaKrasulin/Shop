@@ -1,0 +1,209 @@
+/* ----Cart------------------------------------------------------------------------ */
+
+header {
+    background: linear-gradient(#000000, #ffffff);
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+body {
+
+}
+
+/* ----Блок1------------------------------------------------------------------------ */
+.block1 {
+    font-family: "Montserrat";
+}
+
+/* ----Контейнер блока 1------------------------------------------------------------------------ */
+.block1__container {
+    padding-top: 2.6%;
+}
+
+/* ----Тело блока1------------------------------------------------------------------------ */
+.block1__body {
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 970px;
+    padding: 0.85% 1.7%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    background: #E5F5EC;
+    border: solid green 1px;
+    border-radius: 25px;
+}
+
+/* ----Текст блока1------------------------------------------------------------------------ */
+.block1__text {
+    display: flex;
+    font-size: 36px;
+}
+
+.bl1-text__p {
+    line-height: 100%;
+    color: black;
+}
+
+.bl1-text__span {
+    margin-left: 5.61%;
+    color: black;
+    white-space: nowrap;
+}
+
+/* ----Кнопка оформить блока 1------------------------------------------------------------------------ */
+.block1__button {
+    background: green;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 116%;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    padding: 1.07% 4.3%;
+    color: #EFEFEF;
+    font-family: "Roboto";
+    border-radius: 25px;
+}
+
+/* ---Блок 2------------------------------------------------------------------------ */
+.block2 {
+}
+
+/* ----Контейнер блока 2------------------------------------------------------------------------ */
+.block2__container {
+    padding-top: 2.6%;
+    padding-bottom: 3.2%;
+}
+
+/* ----Тело блока 2------------------------------------------------------------------------ */
+.block2__body {
+    margin: 0 auto;
+    max-width: 970px;
+}
+
+/* ----Отображение товара в козине с модели------------------------------------------------------------------------ */
+.block2__item {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    background: #EFEFEF;
+    border-radius: 25px;
+    padding: 1.03%;
+}
+
+.block2__item:not(:last-child) {
+    margin-bottom: 2.06%;
+}
+
+/* ----Картинка товара------------------------------------------------------------------------ */
+.bl2-item__a {
+    margin-right: 12.47%;
+}
+
+.bl2-item__a:hover {
+    opacity: 0.5;
+}
+
+.bl2-item__img {
+    border-radius: 25px;
+    max-width: 140px;
+    max-height: 140px;
+}
+
+/* ----Название товара------------------------------------------------------------------------ */
+.bl2-item__p {
+    font-family: "Roboto";
+    flex: 1 1 auto;
+    font-size: 24px;
+    line-height: 120%;
+    color: #000000;
+    max-width: 375px;
+    max-height: 29px;
+    text-align: center;
+    margin-right: 2.06%;
+}
+
+/* ----Количество и цена товара------------------------------------------------------------------------ */
+
+.bl2-item__count {
+    color: black;
+    line-height: 123%;
+
+
+}
+
+.bl2-item__price {
+    width: 75px;
+    color: black;
+    line-height: 123%;
+    margin-right: 20px;
+}
+
+.bl2-item__price__count {
+    font-size: 30px;
+    display: flex;
+    margin-right: 6.18%;
+}
+
+/* ----Иконки управления------------------------------------------------------------------------ */
+
+.bl2-item__icons__all {
+    display: flex;
+}
+
+.bl2-item__icons:not(:last-child) {
+    margin-right: 2%;
+}
+
+.bl2-item__icons:hover {
+    opacity: 0.5;
+}
+
+/* ----Адаптив------------------------------------------------------------------------ */
+@media (max-width: 992px) {
+
+    .block1__text {
+        font-size: 30px;
+    }
+
+    .bl2-item__price__count, .bl2-item__p {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 662px) {
+    .block2__body {
+        max-width: 300px;
+    }
+
+    .bl2-item__p, .bl2-item__price__count, .bl2-item__a {
+        margin-right: initial;
+    }
+
+    .bl2-item__price__count, .bl2-item__p {
+        font-size: 16px;
+    }
+
+    .block2__item {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+}
+
+
+@media (max-width: 467px) {
+
+    .block1__text {
+        font-size: 24px;
+    }
+
+    .block1__body {
+        justify-content: center;
+    }
+}
+

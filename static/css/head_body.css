@@ -1,0 +1,254 @@
+/* Обнуление */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: gray;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    background-color: white;
+    height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 500;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----Main------------------------------------------------------------------------ */
+main {
+    flex: 1 1 auto;
+}
+
+
+/* ----Main------------------------------------------------------------------------ */
+
+._container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: content-box;
+}
+
+._ibg {
+    position: relative;
+}
+
+._ibg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+/* ----Хедер------------------------------------------------------------------------ */
+header {
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: black;
+}
+
+/* ----Хедер контейнер------------------------------------------------------------------------ */
+.header__container {
+    display: flex;
+    align-items: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    min-height: 93px;
+}
+
+/* ----Лого------------------------------------------------------------------------ */
+.header__logo {
+}
+
+/* ----Меню хедера------------------------------------------------------------------------ */
+.header-menu {
+    margin-left: 5%;
+    width: 100%;
+}
+
+.h-menu__list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.h-menu__item {
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* ----Стиль текста меню хедера------------------------------------------------------------------------ */
+.h-menu__link {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 185%;
+    color: #FFFFFF;
+}
+
+
+/* ----Футер------------------------------------------------------------------------ */
+
+footer {
+    background: black;
+    width: 100%;
+}
+
+/* ----Контейнер футера------------------------------------------------------------------------ */
+.footer__container {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    align-items: center;
+}
+
+/* ----Меню футера с текстом------------------------------------------------------------------------ */
+.footer-menu {
+    max-width: 556px;
+    width: 100%;
+    margin-left: 9.40%;
+
+}
+
+.f-menu__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.f-menu__item{
+    white-space: nowrap;
+}
+
+/* ----Стиль тескта меню футера с текстом------------------------------------------------------------------------ */
+.f-menu__link {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 185%;
+    color: #FFFFFF;
+}
+
+/* ----Меню футера с иконками----------------------------------------------------------------------- */
+.footer-menu-links {
+    margin-left: 9.74%;
+    max-width: 170px;
+    width: 100%;
+}
+
+.f-m-links__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* ----Адаптив----------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .cart__img {
+        display: none;
+    }
+
+    .header__logo {
+        max-width: 200px;
+        height: auto;
+    }
+
+    .h-menu__link, .f-menu__link {
+        font-size: 20px;
+    }
+
+
+
+
+}
+
+@media (max-width: 662px) {
+
+    .h-menu__list, .f-menu__list {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header-menu {
+        margin-left: 35%;
+    }
+
+    .header__logo {
+        max-width: 150px;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 467px) {
+    .h-menu__link, .f-menu__link {
+        font-size: 16px;
+    }
+
+    .f-m-links__list {
+        flex-direction: column;
+    }
+
+    .footer-menu-links {
+        margin-left: 6.74%;
+        flex-direction: column;
+    }
+
+    .header__logo {
+        max-width: 100px;
+        height: auto;
+    }
+
+}
